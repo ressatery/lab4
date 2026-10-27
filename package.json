@@ -1,0 +1,12 @@
+{
+  "name": "lab4",
+  "version": "1.0.0",
+  "description": "ЛР4: HTTP-сервер на Node.js (варіант 7, weather.json)",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "start": "node main.js",
+    "dev": "node --watch main.js"
+  },
+  "license": "ISC"
+}
