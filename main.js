@@ -1,4 +1,5 @@
 import { Command } from 'commander';
+import fs from 'node:fs'
 
 const program = new Command();
 
@@ -19,4 +20,10 @@ if (!/^\d+$/.test(options.port) || port > 65535) {
   program.error('error: port must be an integer from 0 to 65535');
 }
 
-console.log(options);
+fs.access(options.input, fs.constants.R_OK, (err) => {
+  if (err) {
+    console.error('Cannot find input file');
+    process.exit(1);
+  }
+  console.log('Файл знайдено');
+});
